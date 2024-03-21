@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>LDP System</title> 
+    
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,
+  700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" 
+  rel="stylesheet">
+
+
+
+    <!--<link href="app.css" rel="stylesheet"/>-->
+
+    <!--<link rel="stylesheet" href="/static/index.css">-->
+
+    <script src="lib/jquery-1.8.1.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="scripts.js"></script>
+
+</head>
+
+<body>
+
+  <!--HEADER-->
+
+    <div id="home">
+    <div id="app">
+        <header id="header">
+          <div id="logo">            
+            <a href="/admin"><img src="{{ url_for('static', filename='images/logo2.png') }}" alt="LDP"></a>
+          </div>
+
+      <div class="title">
+      <h4><span>LDP System</span></h4>
+      </div>
+      <div class="dropdown show" id="dropdown-menu">
+        
+        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-solid fa-user"></i>{{ name }}
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#">Settings</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </div>
+      </div>
+    </header> <hr>
+
+    <!--END HEADER-->
+
+    <!--MAIN CONTENT-->
+  <div id="main">
+    <section class="side-bar">    
+      <!--SIDE BAR CONTENT-->
+    <div id="box">
+      <div class="sidebar">        
+       
+        <ul class="menu">
+            <li class="active">
+                <a href="/admin">
+                <i class="fa-solid fa-home"></i>
+                <span>Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/index">
+                <i class="fa-solid fa-vials"></i>
+                <span>B.Test</span>
+                </a>
+            </li>                
+            
+            <li>
+                <a href="/statistics">
+                    <i class="fas fa-chart-bar"></i>
+                <span>Statistic</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/data">
+                    <i class="fas fa-briefcase"></i>
+                <span>Data</span>
+                </a>
+            </li>
+
+            
+
+            <li class="settings">
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                <span>Setting</span>
+                </a>
+            </li>
+        </ul>
+</div>
+    </div> 
+    
+    </section>
+
+  <section id="main-content">   
+    <!--END SIDE BAR CONTENT-->       
+<!--DISEASES AWARENESS-->
+  <div class="container">
+    <section id="why-us" class="why-us">
+      <div class="container-header">
+        <header id="title">
+            <div id="header-title">
+              <h1>Records</h1>
+            </div> 
+            <div class="bar">
+              <div class="progress-bar" style="background-color: #7379e8;"></div>
+            </div>           
+           </header>
+           
+      </div>
+      <div class="container">
+        
+        <div class="row">
+            <div class="col md-12">
+                <div class="jumbotron p-3">
+                  <form action="/ldpatients" method="POST">
+                    <div class="row">
+                      
+                      <input style="width: 30%; height: 10%;" type="text" name="search_id" id="search_id" value="{{ search_id }}" maxlength="8" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  required>
+                      <button type="button" onclick="searchpatient()" style="background-color: green; border-radius: 10px; color: white; transition: background-color 0.3s; width: 15%;">
+                         <i class="fas fa-search" style="margin-right: 5px;"></i> Search
+                      </button> 
+                      <div>
+                        <label for="message" style="font-size: 10px; color: red">{{ message }}</label>
+                      </div>
+                        <h2>Patient records</h2><br>
+                      <div class="col-md-5">
+                        
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="Full_names" name="Full_names" value="{{ Full_names }}" required readonly>
+                
+                        <label for="gender" >Gender:</label>
+                        <input type="text" name="Gender" id="Gender" value="{{ Gender }}" readonly required>                
+                        <br>
+                        <label for="age">Age:</label>
+                        <input type="text" id="age" name="age" value="{{ age }}" readonly required>
+
+                        
+                      </div>
+                      <div class="col-md-6">
+                        <label for="address">Address:</label>
+                        <input type="text" id="Address" name="Address" value="{{ Address }}" readonly required>
+                
+                        <label for="phoneNumber">Phone Number:</label>
+                        <input type="tel" id="Phone_number" name="Phone_number" value="{{ Phone_number }}" readonly required>                                   
+
+
+                        <label for="status">Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="status"></option>
+                            <option value="Positive">Positive</option>
+                            <option value="Negative">Negative</option>
+                            
+                        </select>
+
+                        
+                      </div>                             
+                    </div><br><br>
+                    
+                      <a href=""><input type="submit" class="btn" value="Save"></a>
+                     
+                  </div>
+
+                   
+                        <script>
+                          function searchpatient() {
+                            var idNumber = document.getElementById("search_id").value;
+                            window.location.href = "/update_search?search_id=" + idNumber;
+                          }
+                    </script>
+                
+                </form>        
+                </div>
+              </div>
+            </div><hr>
+
+
+   <!-- End DISEASES AWARENESS-->
+
+     <!--FOOTER-->
+    </div id="footer">
+    
+        <footer>
+          <div id="details">
+            <h6>&copy 2024.</h6>
+          <h6>LDP-System. By INP17/00008/20 & IN17/00021/20</h6>
+          </div>
+        </footer>
+    </div>
+    </div>
+
+    </section>
+  </div>
+  
+
+
+
+
+    <!--END FOOTER-->
+
+    <!--END MAIN CONTENT-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+   
+
+      
+
+
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --green:#27ae60;
+    --dark-color:#219150;
+    --black:#444;
+    --light-color:#666;
+    --border: .1rem solid rgba(0,0,0,1);
+    --boder-hover: .1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,1);
+}
+
+
+*{
+    font-family: Poppin, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;                
+    transition: all .2s linear;
+    transition: width none;
+}
+body{
+    font: 1em Verdana, Geneva, sans-serif;
+    padding: 0;    
+    color: Black;
+    background-color: #7379e8;
+}
+div{
+    padding: 0%;
+    margin: 0%;
+}
+#app
+{ 
+background-color: white;
+margin: 1rem;
+border: var(--border);
+}
+
+#app>header{            
+font-size: 1.5em;
+color: #006;
+background-color: #7379e8;
+}
+
+#footer{
+
+color: #006;
+background-color: #7379e8;
+}
+
+#main{
+margin: 1rem;
+display: flex;
+width: 100%;
+}
+
+/*HEADER*/
+
+#header{
+  display: flex;
+  justify-content: space-between;             
+  
+}
+
+#logo a img{
+  width: 70%;
+  height: 65%;
+  padding-left: 25px;
+  padding-top: 10px;
+}
+
+
+#home a{
+  color: #006;
+}
+
+#home h4{
+  padding: 1rem 2rem;
+}
+
+#profile i{
+padding: 1rem 10rem;
+         
+
+}
+
+#profile i{
+color: #fff;
+font-size: 14px;
+text-decoration: none;          
+align-items: center;
+gap: 2.5rem;
+
+}
+
+#header-title{
+display: flex;
+justify-content: space-between;
+}
+
+
+/*MAIN CONTENT*/
+
+/*SIDE BAR */ 
+
+       
+.sidebar{
+position: sticky;
+font-size: 1.5rem;
+top: 0;
+bottom: 0;
+left: 0;
+width: 150px;
+height: 79vh;
+padding-top: 0;            
+overflow: hidden;
+transition: all 0.5s linear;
+background:#f5f5f5;
+}       
+
+.menu{
+height: 100%;
+position: relative;
+list-style: none;
+padding: 0;
+}
+
+.menu li{
+padding: 1.5rem;
+margin: 8px 0;
+border-radius: 8px;
+transition: all 0.5s ease-in-out;
+}         
+
+
+.menu a{
+color: black;
+font-size: 15px;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.menu i{
+color: #006;
+}
+
+.menu a span{
+overflow: hidden;            
+}
+
+.menu a i{
+font-size: 1.5rem;
+}
+
+.settings{
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+} 
+
+
+
+#title h1{
+color: #006;
+margin-left: 20px;
+
+}
+
+.why-us .row{
+margin-left: 1rem;
+}
+
+#gender{
+  font-size: 1rem;
+}
+
+#status{
+  font-size: 1rem;
+}
+
+.why-us .container{        
+height: 72vh;
+border-radius: 1rem;
+box-shadow: 0px 2px 15px rgba(1, 1, 0, 0.1);
+}
+
+.why-us .container h1{
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: #006;
+
+}
+
+.why-us .container h4{
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: #006;
+text-decoration: underline;
+}
+
+.why-us .container p{
+font-family: 'Times New Roman', Times, serif;
+color: #000;
+}
+
+.why-us .container form{         
+border-radius: 1.5rem;
+padding: 15px;
+font-size: 2rem;
+margin-top: 0px;
+font-weight: 20px;
+border: var(--border);
+
+}
+
+.why-us .container form label{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 1.2rem;
+}
+
+.why-us .container form label, input{
+margin-left: 100px;
+}
+
+
+.why-us .container form h2{
+color: #006;
+text-decoration: underline;
+text-align: center;
+}
+
+.why-us .container form input{
+font-size: 1rem;
+width: 70%;
+border: var(--border);
+padding: 5px;
+border-radius: 10px;
+}
+
+.why-us .container .btn{
+width: 100px;
+background: #7379e8;
+text-align: center;
+color: #fff;
+font-size: 1.2rem;
+font-family: Georgia, 'Times New Roman', Times, serif;
+border-radius: 10px;
+margin-left: 480px;
+transition: all ease-in-out 0.4s;
+}
+
+.why-us .container .submit-btn button{
+color: #fff;
+font-size: 1.2rem;
+}
+
+.why-us .content {
+margin-top: 0px;            
+
+box-shadow: 0px 2px 15px rgba(1, 1, 0, 0.1);
+margin-left: 20px;
+}
+
+.why-us .content h6{
+  color: #006;
+  margin-left: 45px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.why-us .content img{
+  height: 100px;
+  width: 200px;
+  padding-left: 100px;
+}
+.why-us .content h3 {
+font-weight: 400;
+font-size: 34px;
+margin-bottom: 30px;
+}
+
+.why-us .content p {
+margin-bottom: 30px;
+}
+
+.why-us .content .more-btn {
+display: inline-block;
+text-decoration: none;
+padding: 6px 30px 6px 30px;
+color: #d31010;
+font-size: 1.2rem;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+border-radius: 100px;
+transition: all ease-in-out 0.4s;
+}
+
+.why-us .content .more-btn:hover {
+color: #006;
+background: #fff;
+}
+
+.why-us .icon-boxes .icon-box {
+text-align: center;
+border-radius: 20px;
+border: var(--border);
+box-shadow: 0px 2px 15px rgba(1, 1, 0, 0.1);
+width: 100%;
+}
+
+#box{
+border-radius: 10px solid;
+margin-left: 0;
+padding-left: 0;
+box-shadow: 0px 2px 15px rgba(1, 1, 0, 0.1);
+}
+
+.why-us .icon-boxes .icon-box i {
+font-size: 40px;
+color: #1977cc;
+margin-bottom: 30px;
+}
+
+.why-us .icon-boxes .icon-box h4 {
+font-size: 20px;
+font-weight: 700;
+margin: 0 0 30px 0;
+color: #006;
+}
+
+.why-us .icon-boxes .icon-box p {
+font-size: 15px;
+color: hsl(0, 3%, 6%);
+}
+
+#details{
+display: flex;
+padding-left: 400px;
+font-size: 2rem;
+color: #006;
+}
+
+#details h6{          
+font-size: 1rem;
+
+}
+
+.bar .progress-bar {
+height: 5px;
+width: 1110px;
+margin-top: 20px;
+
+}
+
+hr{
+font-size: 20px;
+color: red;
+height: 20px;
+}
+
+
+#progress-bar {
+height: 20px;
+width: 100%;
+margin-top: 20px;
+border-radius: 5px;
+
+
+}
+</style>
+
+<script>
+  function calculateAge() {
+      var dob = new Date(document.getElementById('dob').value);
+      var today = new Date();
+      var age = today.getFullYear() - dob.getFullYear();
+
+      // Check if the birthday has occurred this year
+      if (today.getMonth() < dob.getMonth() || (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())) {
+          age--;
+      }
+
+      document.getElementById('age').value = age;
+  }
+</script>
+    
+</body>
+</html>

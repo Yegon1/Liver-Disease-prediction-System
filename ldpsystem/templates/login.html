@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDP-Login</title> 
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylels.css') }}">
+    
+    
+
+</head>
+<body>
+
+       <div class="form-container">
+        <form action="{{ url_for('login') }}" method="post">
+            <h3 style="background-color: #7379e8; color: white;">LOGIN</h3>
+            <div style="text-align: center; color: red; font-size: 2rem;">{{ msg }}</div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required placeholder="Enter email" class="box">
+             <label for="password">Password:</label>
+            <input type="password" name="password" required placeholder="enter password" class="box">
+            <a href="{{ url_for('login') }}"><input type="submit" name="submit" class="btn" value="Login"></a>
+            <p>Have no Account? <a href="{{ url_for('admin_login') }}">Register</a></p>
+        </form>
+    </div>
+
+
+    <style>
+           </style>
+
+
+</body>
+</html>

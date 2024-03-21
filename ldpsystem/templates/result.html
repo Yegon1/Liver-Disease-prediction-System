@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDP System</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+    <div class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2 class='container-heading'><span class="heading_font">Liver Disease Prediction</span></h2>
+
+        <br><br><br><br><br><br><br>
+
+        <!-- Result -->
+		<div class="results">
+			{% if prediction==1%}
+				<h1><span class='danger'>Oops! 🙁<br><br>You have LIVER DISEASE <br><br>Please Consult a Doctor.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='dr.gif')}}" alt="LIVER Image">
+			{% elif prediction==0%}
+				<h1><span class='safe'>🤩 Congratulation! 🤩<br><br>You DON'T have LIVER DISEASE.</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='yes.webp')}}" alt="Not LIVER Image">
+			{% endif %}
+		</div>
+        </form>
+
+    </div>
+    <div>
+            <br><br> <br><br><br><br><br><br><br><br>
+
+            <p class='footer-description'>©2023 INP17/00008/20. IN17/00021/20</p>
+
+    </div>
+
+
+<style>
+
+/* Color */
+body{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* Heading Font */
+.container-heading{
+    margin: 0;
+}
+
+.heading_font{
+    color: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 50px;
+	font-weight: normal;
+}
+
+
+
+</style>
+
+
+</body>
+
+</html>

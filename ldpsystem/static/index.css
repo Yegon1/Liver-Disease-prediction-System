@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+            :root{
+                --green:#27ae60;
+                --dark-color:#219150;
+                --black:#444;
+                --light-color:#666;
+                --border: .1rem solid rgba(0,0,0,1);
+                --boder-hover: .1rem solid var(--black);
+                --box-shadow:0 .5rem 1rem rgba(0,0,0,1);
+            }
+
+
+            *{
+                font-family: Poppin, sans-serif;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                border: none;
+                outline: none;
+                text-decoration: none;                
+                transition: all .2s linear;
+                transition: width none;
+            }
+            body{
+                font: 1em Verdana, Geneva, sans-serif;
+                padding: 0;    
+                color: Black;
+                background-color: #7379e8;
+            }
+            div{
+                padding: 0%;
+                margin: 0%;
+            }
+            #app
+            { 
+            background-color: white;
+            margin: 1rem;
+            border: var(--border);
+            }
+
+            #app>header{            
+            font-size: 1.5em;
+            color: #006;
+            background-color: #7379e8;
+            }
+
+            #footer{
+            
+            color: #006;
+            background-color: #7379e8;
+            }
+
+            #main{
+            margin: 1rem;
+            display: flex;
+            width: 100%;
+            }
+            
+            /*HEADER*/
+
+            #header{
+              display: flex;
+              justify-content: space-between;             
+              
+            }
+
+            #logo a img{
+              width: 70%;
+              height: 65%;
+              padding-left: 25px;
+              padding-top: 10px;
+            }
+            
+
+            #home a{
+              color: #006;
+            }
+
+            #home h4{
+              padding: 1rem 2rem;
+            }
+
+            #profile i{
+            padding: 1rem 10rem;
+                     
+
+         }
+
+         #profile i{
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;          
+            align-items: center;
+            gap: 2.5rem;
+            
+         }
+         
+         #header-title{
+          display: flex;
+          justify-content: space-between;
+         }
+
+         #dropdown-menu{
+          padding: 15px 50px 10px;
+         }
+
+         .dropdown-menu{
+          width: 20px;
+         }
+
+
+         /*MAIN CONTENT*/
+
+         /*SIDE BAR */ 
+
+                   
+          .sidebar{
+            position: sticky;
+            font-size: 1.5rem;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            height: 79vh;
+            padding-top: 0;            
+            overflow: hidden;
+            transition: all 0.5s linear;
+            background:#f5f5f5;
+        }       
+
+        .menu{
+            height: 100%;
+            position: relative;
+            list-style: none;
+            padding: 0;
+         }
+
+         .menu li{
+            padding: 1.5rem;
+            margin: 8px 0;
+            border-radius: 8px;
+            transition: all 0.5s ease-in-out;
+         }         
+         
+
+         .menu a{
+            color: black;
+            font-size: 15px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+         }
+
+         .menu i{
+            color: #006;
+         }
+
+         .menu a span{
+            overflow: hidden;            
+         }
+
+         .menu a i{
+            font-size: 1.5rem;
+         }
+
+         .settings{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-size: .1rem;
+         }          
+        
+
+         #title h1{
+          color: #006;
+          margin-left: 20px;
+          
+         }
+
+         .why-us .row{
+          margin-left: 1rem;
+         }
+
+        .why-us .container{        
+          height: 70vh;
+          border-radius: 1rem;
+          box-shadow: 0px 2px 15px rgba(1, 1, 0, 0.1);
+        }
+
+        .why-us .container h1{
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          color: #006;
+          
+        }
+
+        .why-us .container h4{
+         font-family: Georgia, 'Times New Roman', Times, serif;
+         color: #006;
+         text-decoration: underline;
+       }
+
+       .why-us .container p{
+         font-family: 'Times New Roman', Times, serif;
+         color: #000;
+       }
+
+       .why-us .container form{         
+         border-radius: 1.5rem;
+         padding: 20px;
+         font-size: 2rem;
+         margin-top: 0px;
+         font-weight: 20px;
+         border: var(--border);
+         
+       }
+
+       .why-us .container form label{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1.5rem;
+       }
+
+       .why-us .container form label, input{
+        margin-left: 100px;
+       }
+
+
+       .why-us .container form h2{
+        color: #006;
+        text-decoration: underline;
+        text-align: center;
+       }
+
+       .why-us .container form input{
+        font-size: 1rem;
+        width: 70%;
+        border: var(--border);
+        padding: 5px;
+        border-radius: 10px;
+       }
+
+       .why-us .container .submit-btn{
+        width: 100px;
+         background: #7379e8;
+         text-align: center;
+         color: #fff;
+         font-size: 1.2rem;
+         font-family: Georgia, 'Times New Roman', Times, serif;
+         border-radius: 10px;
+         margin-left: 480px;
+         transition: all ease-in-out 0.4s;
+       }
+
+       .why-us .container .submit-btn button{
+        color: #fff;
+        font-size: 1.2rem;
+       }
+
+         .why-us .content {
+            margin-top: 0px;            
+           
+            box-shadow: 0px 2px 15px rgba(1, 1, 0, 0.1);
+            margin-left: 20px;
+            }
+
+            .why-us .content h6{
+              color: #006;
+              margin-left: 45px;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              font-style: italic;
+              font-size: 1.2rem;
+            }
+
+            .why-us .content img{
+              height: 100px;
+              width: 200px;
+              padding-left: 100px;
+            }
+         .why-us .content h3 {
+         font-weight: 400;
+         font-size: 34px;
+         margin-bottom: 30px;
+         }
+
+         .why-us .content p {
+         margin-bottom: 30px;
+         }
+
+         .why-us .content .more-btn {
+         display: inline-block;
+         text-decoration: none;
+         padding: 6px 30px 6px 30px;
+         color: #d31010;
+         font-size: 1.2rem;
+         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+         border-radius: 100px;
+         transition: all ease-in-out 0.4s;
+         }
+
+         .why-us .content .more-btn:hover {
+         color: #006;
+         background: #fff;
+         }
+
+         .why-us .icon-boxes .icon-box {
+         text-align: center;
+         border-radius: 20px;
+         border: var(--border);
+         box-shadow: 0px 2px 15px rgba(1, 1, 0, 0.1);
+         width: 100%;
+         }
+
+         #box{
+          border-radius: 10px solid;
+          margin-left: 0;
+          padding-left: 0;
+          box-shadow: 0px 2px 15px rgba(1, 1, 0, 0.1);
+         }
+
+         .why-us .icon-boxes .icon-box i {
+         font-size: 40px;
+         color: #1977cc;
+         margin-bottom: 30px;
+         }
+
+         .why-us .icon-boxes .icon-box h4 {
+         font-size: 20px;
+         font-weight: 700;
+         margin: 0 0 30px 0;
+         color: #006;
+         }
+
+         .why-us .icon-boxes .icon-box p {
+         font-size: 15px;
+         color: hsl(0, 3%, 6%);
+         }
+
+         #details{
+          display: flex;
+          padding-left: 400px;
+          font-size: 2rem;
+          color: #006;
+         }
+
+         #details h6{          
+          font-size: 1rem;
+          
+         }
+
+         .bar .progress-bar {
+          height: 5px;
+          width: 1110px;
+          margin-top: 20px;
+          
+        }
+
+        hr{
+          font-size: 20px;
+          color: red;
+          height: 20px;
+        }
+        
+
+        #progress-bar {
+          height: 20px;
+          width: 100%;
+          margin-top: 20px;
+          border-radius: 5px;
+         
+          
+        }

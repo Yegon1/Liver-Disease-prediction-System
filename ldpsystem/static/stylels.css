@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --green:#27ae60;
+    --dark-color:#219150;
+    --black:#444;
+    --light-color:#666;
+    --border: .1rem solid rgba(0,0,0,1);
+    --boder-hover: .1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,1);
+}
+
+
+
+
+*{
+    font-family: Poppin, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    
+    transition: all .2s linear;
+    transition: width none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+
+}
+html::-webkit-scrollbar{
+    width: 10px;
+    height: 5px;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+
+body{
+            position: relative;
+            background-color: #f0f0f0;
+            height: auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: space-between;
+            width: 100%;
+}
+
+.btn,
+.delete-btn,
+.option-btn{
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--white);
+    border-radius: 5px;
+    text-transform: capitalize;
+    
+}
+
+.btn:hover{
+    background-color: #006;
+    color: #fff;
+}
+
+.btn{
+    background-color: #7379e8;
+    margin-top: 10px;
+    margin-left: 18rem;
+    color: #fff;
+}
+
+
+.delete-btn{
+    background-color: var(--red);
+}
+
+.option-btn{
+    background-color: var(--orange);
+}
+
+.form-container{
+    min-height: 10vh;
+    display: flex;    
+    justify-content: center;
+    padding: 50px;
+}
+
+.form-container form{
+    width: 400px;
+    border-radius: 1.5rem;
+    padding: 20px;
+    font-size: 2rem;
+    margin-top: 70px;
+    font-weight: 20px;
+    border: var(--border);
+}
+
+
+.form-container label{
+    text-align: left;
+}
+
+.form-container form h3{
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+}
+
+.form-container form .box{
+    width: 100%;
+    border-radius: 5px;
+    border: var(--border);
+    padding: 12px 14px;
+    font-size: 10px;
+    margin: 10px 0;
+
+}
+
+.form-container form p{
+    margin-top: 15px;
+    font-size: 20px;
+    color: var(black);
+    text-align: center;
+}
+
+.btn{
+    text-align: center;
+}
+
+.form-container form p a{
+    color: #7379e8;
+    text-decoration: none;
+    text-align: center;
+}
+
+.form-container form p a:hover{
+    text-decoration: underline;
+    color: var(blue);
+}
+ 
